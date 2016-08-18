@@ -1,0 +1,328 @@
+C:\Users\Dawit\SkyDrive\Desktop>test -i supplies1.xml
+*******************
+PROJ3: DINNER PLANS
+*******************
+0 - Exit
+1 - Input recipe <filename>
+2 - Input inventory <filename>
+3 - Subtract inventory <filename>
+4 - Add <recipe name>
+5 - Remove <recipe name>
+6 - Reset
+7 - Output menu <filename>
+8 - Print menu
+9 - Print <recipe name>
+10 - Increase <ingredient name> [<quantity> [<units>]]
+11 - Reduce <ingredient name> [<quantity> [<units>]]
+12 - Insert <equipment>
+13 - Delete <equipment>
+14 - Print inventory ingredients
+15 - Print inventory equipment
+16 - Print ingredient list
+17 - Print ingredient shopping list
+18 - Output ingredient shopping list <filename>
+19 - Print equipment list
+20 - Print equipment shopping list
+21 - Output equipment shopping list <filename>
+22 - Help
+_____________________
+14
+Ingredients:
+ 8 C. unbleached wheat blend flour
+ 1 can baking powder
+ 5 lb. unrefined sugar
+ 1 box coarse kosher salt
+ 10 egg
+ 1 gal. hormone-free milk
+ 1 jar natural peanut butter
+ 1 bottle ketchup
+ 1/2 gal. orange juice
+ 1 box cheerios
+ 24 oz. organic vegetable oil
+10 egg 1
+14
+Ingredients:
+ 8 C. unbleached wheat blend flour
+ 1 can baking powder
+ 5 lb. unrefined sugar
+ 1 box coarse kosher salt
+ 11 egg
+ 1 gal. hormone-free milk
+ 1 jar natural peanut butter
+ 1 bottle ketchup
+ 1/2 gal. orange juice
+ 1 box cheerios
+ 24 oz. organic vegetable oil
+10 coarse kosher salt 2 box
+14
+Ingredients:
+ 8 C. unbleached wheat blend flour
+ 1 can baking powder
+ 5 lb. unrefined sugar
+ 1 box coarse kosher salt
+ 11 egg
+ 1 gal. hormone-free milk
+ 1 jar natural peanut butter
+ 1 bottle ketchup
+ 1/2 gal. orange juice
+ 1 box cheerios
+ 24 oz. organic vegetable oil
+ coarsekosher
+0
+
+C:\Users\Dawit\SkyDrive\Desktop>main
+
+C:\Users\Dawit\SkyDrive\Desktop>g++ -std=c++11 main.cpp Equipment.cpp Prepar
+n.cpp Ingredient.cpp Recipe.cpp Cookbook.cpp Inventory.cpp Parser.cpp -o tes
+
+C:\Users\Dawit\SkyDrive\Desktop>test -i supplies1.xml
+*******************
+PROJ3: DINNER PLANS
+*******************
+0 - Exit
+1 - Input recipe <filename>
+2 - Input inventory <filename>
+3 - Subtract inventory <filename>
+4 - Add <recipe name>
+5 - Remove <recipe name>
+6 - Reset
+7 - Output menu <filename>
+8 - Print menu
+9 - Print <recipe name>
+10 - Increase <ingredient name> [<quantity> [<units>]]
+11 - Reduce <ingredient name> [<quantity> [<units>]]
+12 - Insert <equipment>
+13 - Delete <equipment>
+14 - Print inventory ingredients
+15 - Print inventory equipment
+16 - Print ingredient list
+17 - Print ingredient shopping list
+18 - Output ingredient shopping list <filename>
+19 - Print equipment list
+20 - Print equipment shopping list
+21 - Output equipment shopping list <filename>
+22 - Help
+_____________________
+0
+
+C:\Users\Dawit\SkyDrive\Desktop>test -s -i supplies1.xml
+22
+*********
+  HELP
+*********
+------------------
+Terminal commands:
+------------------
+  Proj3 [-s] [-v] [-r <recipe_file>] [-i <inventory_file>]
+    -s: silent mode
+    -v: verbose mode
+    -r <recipe_file>: reads and stores the recipe_file in a cookbook.
+    -f <inventory_file>: reads and stored the inventory_file in an inventory
+
+--------------------
+Program commands:
+--------------------
+  0 - Exit: Exists program.
+  1 - Input recipe <filename>: Open and read a file containing recipes, and
+ed them in a cookbook.
+  2 - Input inventory <filename>: Open and read a file containing inventory,
+ combines it with existing inventory, if any.
+  3 - Subtract inventory <filename>: Open and subtract inventory list in a f
+ from the existing inventory.
+  4 - Add <recipe name>: Add a stored recipe to a current menu list.
+  5 - Remove <recipe name>: Remove a recipe from the current menu list.
+  6 - Reset: Empty the current menu list.
+  7 - Output menu <filename>: Open and write the current menu to an RBML fil
+  8 - Print menu: Prints the title of each recipe in the menu
+  9 - Print <recipe name>: Print the specified recipe to console, if exists.
+  10 - Increase <ingredient name> [<quantity> [<units>]]: Add the specified
+edient, with optional <quantity> and <units>, to the inventory.
+  11 - Reduce <ingredient name> [<quantity> [<units>]]: Reduce the specified
+redient, with optional <quantity> and <units> from the inventory.
+  12 - Insert <equipment>: Add the specified equipment to inventory.
+  13 - Delete <equipment>: Remove equipment from inventory.
+  14 - Print inventory ingredients: Lists all the ingredients in the current
+entory.
+  15 - Print inventory equipment: Lists all the equipments in the current in
+ory.
+  16 - Print ingredient list: Lists the combined ingredients from all recipe
+ored.
+  17 - Print ingredient shopping list: Subtracts the ingredient list from th
+ventory ingredients, and lists all missing ingredients.
+  18 - Output ingredient shopping list <filename>: Saves the ingredient shop
+ list to the specified file in RBML format.
+  19 - Print equipment list: Lists the combined equipments from all recipes
+ed.
+  20 - Print equipment shopping list: Subtracts the equipment list from the
+ntory equipments and lists all missing equipments.
+  21 - Output equipment shopping list <filename>: Saves the equipment shoppi
+ist to the specified file in RBML format.
+  22 - Help: Opens help menu.
+____________
+0
+
+C:\Users\Dawit\SkyDrive\Desktop>test -v
+0 - Exit | 1 - Input recipe <filename> | 2 - Input inventory <filename> | 3
+btract inventory <filename> | 4 - Add <recipe name> | 5 - Remove <recipe nam
+ 6 - Reset | 7 - Output menu <filename> | 8 - Print menu | 9 - Print <recipe
+e> | 10 - Increase <ingredient name> [<quantity> [<units>]] | 11 - Reduce <i
+dient name> [<quantity> [<units>]] | 12 - Insert <equipment> | 13 - Delete <
+pment> | 14 - Print inventory ingredients | 15 - Print inventory equipment |
+- Print ingredient list | 17 - Print ingredient shopping list | 18 - Output
+edient shopping list <filename> | 19 - Print equipment list | 20 - Print equ
+nt shopping list | 21 - Output equipment shopping list <filename> | 22 - Hel
+1
+Recipe file: foofoo.xml
+0 - Exit | 1 - Input recipe <filename> | 2 - Input inventory <filename> | 3
+btract inventory <filename> | 4 - Add <recipe name> | 5 - Remove <recipe nam
+ 6 - Reset | 7 - Output menu <filename> | 8 - Print menu | 9 - Print <recipe
+e> | 10 - Increase <ingredient name> [<quantity> [<units>]] | 11 - Reduce <i
+dient name> [<quantity> [<units>]] | 12 - Insert <equipment> | 13 - Delete <
+pment> | 14 - Print inventory ingredients | 15 - Print inventory equipment |
+- Print ingredient list | 17 - Print ingredient shopping list | 18 - Output
+edient shopping list <filename> | 19 - Print equipment list | 20 - Print equ
+nt shopping list | 21 - Output equipment shopping list <filename> | 22 - Hel
+9 Foofoo
+Recipe name: Title: Foofoo
+
+  Ingredients:
+2 ripe plantains
+water
+1/4 cup chicherone
+
+  Preparation:
+Slit peel of plantains lengthwise.
+Cut plantains into 1 inch pieces, peels on.
+Boil plantain chunks in enough water to cover in a 2 qt. pot , uncovered, fo
+ minutes.
+Drain plantains and allow to cool until you can handle them.
+Remove peels (should be easy) and put peeled plantain chunks back into pot.
+Mash plantains with potato masher .
+Add chicherone or bacon if desired, stir in.
+
+0 - Exit | 1 - Input recipe <filename> | 2 - Input inventory <filename> | 3
+btract inventory <filename> | 4 - Add <recipe name> | 5 - Remove <recipe nam
+ 6 - Reset | 7 - Output menu <filename> | 8 - Print menu | 9 - Print <recipe
+e> | 10 - Increase <ingredient name> [<quantity> [<units>]] | 11 - Reduce <i
+dient name> [<quantity> [<units>]] | 12 - Insert <equipment> | 13 - Delete <
+pment> | 14 - Print inventory ingredients | 15 - Print inventory equipment |
+- Print ingredient list | 17 - Print ingredient shopping list | 18 - Output
+edient shopping list <filename> | 19 - Print equipment list | 20 - Print equ
+nt shopping list | 21 - Output equipment shopping list <filename> | 22 - Hel
+0
+Goodbye.
+
+C:\Users\Dawit\SkyDrive\Desktop>test -r foofoo.xml
+*******************
+PROJ3: DINNER PLANS
+*******************
+0 - Exit
+1 - Input recipe <filename>
+2 - Input inventory <filename>
+3 - Subtract inventory <filename>
+4 - Add <recipe name>
+5 - Remove <recipe name>
+6 - Reset
+7 - Output menu <filename>
+8 - Print menu
+9 - Print <recipe name>
+10 - Increase <ingredient name> [<quantity> [<units>]]
+11 - Reduce <ingredient name> [<quantity> [<units>]]
+12 - Insert <equipment>
+13 - Delete <equipment>
+14 - Print inventory ingredients
+15 - Print inventory equipment
+16 - Print ingredient list
+17 - Print ingredient shopping list
+18 - Output ingredient shopping list <filename>
+19 - Print equipment list
+20 - Print equipment shopping list
+21 - Output equipment shopping list <filename>
+22 - Help
+_____________________
+4 Foofoo
+Recipe Foofoo added to menu.
+1 pancakes.xml 1 antsOnAStick.xml
+4 Hippie Pancakes
+Recipe Hippie Pancakes added to menu.
+8
+========
+MENU:
+========
+Foofoo
+Hippie Pancakes
+14
+Ingredients:
+2 supplies1.xml
+14
+Ingredients:
+ 8 C. unbleached wheat blend flour
+ 1 can baking powder
+ 5 lb. unrefined sugar
+ 1 box coarse kosher salt
+ 10 egg
+ 1 gal. hormone-free milk
+ 1 jar natural peanut butter
+ 1 bottle ketchup
+ 1/2 gal. orange juice
+ 1 box cheerios
+ 24 oz. organic vegetable oil
+10 cheerios 20 box
+10 egg 1000
+10 baking powder 1 can
+14
+Ingredients:
+ 8 C. unbleached wheat blend flour
+ 2 can baking powder
+ 5 lb. unrefined sugar
+ 1 box coarse kosher salt
+ 1010 egg
+ 1 gal. hormone-free milk
+ 1 jar natural peanut butter
+ 1 bottle ketchup
+ 1/2 gal. orange juice
+ 21 box cheerios
+ 24 oz. organic vegetable oil
+11 organic vegetable oil 24 oz.
+14
+Ingredients:
+ 8 C. unbleached wheat blend flour
+ 2 can baking powder
+ 5 lb. unrefined sugar
+ 1 box coarse kosher salt
+ 1010 egg
+ 1 gal. hormone-free milk
+ 1 jar natural peanut butter
+ 1 bottle ketchup
+ 1/2 gal. orange juice
+ 21 box cheerios
+8
+========
+MENU:
+========
+Foofoo
+Hippie Pancakes
+17 20
+WARNING: Negative value : Subtraction out of range
+Shopping list Ingredients:
+ 2 ripe plantains
+ water
+ 1/4 cup chicherone
+ 2 tsp. baking powder
+ 1 tsp. unrefined sugar
+ 1/4 tsp. coarse kosher salt
+ 1 free-range egg
+ 1 1/4 C. hormone-free milk
+ 1 tsp. organic vegetable oil
+WARNING: Negative value : Subtraction out of range
+Shopping list Equipments:
+ potato masher
+6
+Menu emptied.
+8
+========
+MENU:
+========
+0
+
+C:\Users\Dawit\SkyDrive\Desktop>

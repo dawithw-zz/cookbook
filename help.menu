@@ -1,0 +1,39 @@
+*********
+  HELP            
+*********
+------------------
+Terminal commands: 
+------------------
+  Proj3 [-s] [-v] [-r <recipe_file>] [-i <inventory_file>]
+    -s: silent mode
+    -v: verbose mode
+    -r <recipe_file>: reads and stores the recipe_file in a cookbook.
+    -f <inventory_file>: reads and stored the inventory_file in an inventory.
+
+--------------------
+Program commands:
+--------------------
+  0 - Exit: Exists program.
+  1 - Input recipe <filename>: Open and read a file containing recipes, and stored them in a cookbook.
+  2 - Input inventory <filename>: Open and read a file containing inventory, and combines it with existing inventory, if any. 
+  3 - Subtract inventory <filename>: Open and subtract inventory list in a file, from the existing inventory.
+  4 - Add <recipe name>: Add a stored recipe to a current menu list.
+  5 - Remove <recipe name>: Remove a recipe from the current menu list.
+  6 - Reset: Empty the current menu list.
+  7 - Output menu <filename>: Open and write the current menu to an RBML file.
+  8 - Print menu: Prints the title of each recipe in the menu
+  9 - Print <recipe name>: Print the specified recipe to console, if exists.
+  10 - Increase <ingredient name> [<quantity> [<units>]]: Add the specified ingredient, with optional <quantity> and <units>, to the inventory.
+  11 - Reduce <ingredient name> [<quantity> [<units>]]: Reduce the specified ingredient, with optional <quantity> and <units> from the inventory.
+  12 - Insert <equipment>: Add the specified equipment to inventory.
+  13 - Delete <equipment>: Remove equipment from inventory.
+  14 - Print inventory ingredients: Lists all the ingredients in the current inventory.
+  15 - Print inventory equipment: Lists all the equipments in the current inventory. 
+  16 - Print ingredient list: Lists the combined ingredients from all recipes stored.
+  17 - Print ingredient shopping list: Subtracts the ingredient list from the inventory ingredients, and lists all missing ingredients.
+  18 - Output ingredient shopping list <filename>: Saves the ingredient shopping list to the specified file in RBML format.
+  19 - Print equipment list: Lists the combined equipments from all recipes stored.
+  20 - Print equipment shopping list: Subtracts the equipment list from the inventory equipments and lists all missing equipments.
+  21 - Output equipment shopping list <filename>: Saves the equipment shopping list to the specified file in RBML format.
+  22 - Help: Opens help menu.
+____________
