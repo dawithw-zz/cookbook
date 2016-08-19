@@ -12,7 +12,8 @@ There are two types of files, as previously stated in the overview section of th
 
 **Commands**
 
-Command Line Arguments:
+**Command Line Arguments:**
+
 1. -s : The program will start in silent mode.
 2. -v : The program will start in verbose mode.
 3. -i filename: The program will load an inventory file “filename” and add into its current inventory.
@@ -20,36 +21,62 @@ Command Line Arguments:
 
 *Note: If both -s and -v are used, the argument that appears last will determine the mode at program startup. More than one instance of the –i and –r arguments may be used to load multiple inventory and recipe files respectively.*
 
-Internal Commands:
+**Internal Commands:**
 
 *Note: Items displayed as \<item\> indicate a user input field for proving the item name/type/description. The angle brackets should not be used during input.*
 
 **0. Exit:** The program will terminate. In verbose mode, a farewell message will be displayed upon exiting. Note that all data, except those saved to file, will be lost upon exit.
+
 **1. Input recipe \<file\>:** A recipe file of name “file” will be loaded into a generic cookbook that contains a list of recipes. If the recipe file contains a cookbook, the cookbook in the recipe file will replace the existing cookbook. Additional input of recipe files containing cookbooks will not replace the existing cookbook, but rather merge the two. If there are any formatting errors or unknown tags present, it will be displayed in the console.
+
 **2. Input inventory \<file\>:** An inventory file of name “file” will be loaded into the program’s inventory. When loading multiple files, it the files contain items that are already in the program’s inventory, they will be added to these items. If not, a new instance is created. For ingredients with different units, if both units are supported (see supported features section), then the ingredients are added and the unit is automatically converted to the best fit – adding 1 tbsp to 1 gallon will not result in the quantity being displayed as 257 tbsp due to impracticality.
+
 **3. Subtract inventory \<file\>:** An inventory of file name “file” will be loaded and its items subtracted from the current inventory. If there is more of an item in the selected file than the inventory, the subtraction will lead to the item being removed from the current inventory but an error will be displayed for an attempt to reduce an item’s quantity to negative.
+
 **4. Add \<recipe name\>:** A recipe with the name “recipe name” will be selected from the cookbook and added to the menu. The program allows addition of one recipe to the menu, (as a recipe with similar name could have different preparations) but will display a warning of possible duplicates. It is up to you, the user, to determine if multiple instances of one recipe is needed on the menu.
+
 5**. Remove \<recipe name\>:** A recipe with the name “recipe name” will be removed from the menu. This will not remove the recipe from the program’s cookbook, though. If there are multiple instances of a recipe, all instances will be removed.
+
 **6. Reset:** All recipes will be removed from the menu.
+
 **7. Output \<file\>:** This will save all recipes in the current menu to a file in the RBML format. All
 information of the recipe that was processed during input will be saved. See supported
 features section for more information.
+
 **8. Print current menu:** A list of titles of recipes in the menu will be printed, in the order they
 were added.
+
 **9. Print \<recipe name\>:** A recipe of title “recipe name” will be printed if it is stored in the
 program. This will print all information associated with the recipe, such as ingredients used, preparation steps and additional information about the recipe processed during input.
+
 **10. Increase \<ingredient\> [\<quantity\>[\<unit\>]]:** The ingredient of name “ingredient” in the inventory will be increased by an optional “quantity unit” amount. By default, if no quantity is provided, the ingredient will be increased by 1 quantity. For ingredients with quantities bearing units, it is strongly suggested that the quantity and units be provided. The quantity should be a whole number or a fraction. Additionally, only positive number may be used for the quantity. The ingredient name, quantity (optional) and unit(optional) must be input in the shown sequence.
+
 **11. Reduce \<ingredient\> [\<quantity\> [\<unit\>]]:** Similar format as the increase command, but instead of increasing the ingredient quantity, this decreases the quantity by the specified amount(if any). All rules specified for the increase command apply. In addition, if an ingredient is reduced to a negative number, an error is thrown and the amount is reduced at 0. Ingredients reduced to 0 will be removed from the inventory.
+
 **12. Insert \<equipment\>:** An equipment of name “equipment” will be inserted in the inventory. If the equipment already exists, it’s quantity will be incremented.
+
 **13. Delete \<equipment\>:** The equipment of name “equipment” will be removed from the inventory. Note: even if the equipment has a quantity of more than 1, they will all be removed.
+
 **14. Print ingredient inventory:** A list of all ingredients in the inventory will be printed in the format \<quantity\> \<unit\> \<ingredient\> -- an ingredient per line.
-**15. Print equipment inventory:** A list of all equipment in the inventory will be printed. If there is more than 1 amount of an equipment, the amount will be printed along the equipment. Otherwise, no amount will be printed. For example, if there are 20 forks and a knife in the inventory, the output would look like: ```20 fork \n knife ```
+
+**15. Print equipment inventory:** A list of all equipment in the inventory will be printed. If there is more than 1 amount of an equipment, the amount will be printed along the equipment. Otherwise, no amount will be printed. For example, if there are 20 forks and a knife in the inventory, the output would look like: 
+```
+  20 fork
+  knife
+```
+
 **16. Print ingredient list:** A list of the combined ingredients of all recipes in the menu will be printed. The format for printing inventory ingredients will be followed.
+
 **17. Print ingredient shopping list:** This will print the difference of the inventory ingredients from the ingredients list.
+
 **18. Output ingredients shopping list \<file\>:** This will save the shopping list of ingredients to a file in RBML format.
+
 **19. Print equipment list:** A list of the combined equipments of all recipes in the menu will be printed. The format for printing inventory equipments will be followed.
+
 **20. print equipment shopping list:** This will print the difference of the inventory equipments from the equipments list.
+
 **21. Output equipment shopping list \<file\>:** This will save the shopping list of equipments to a file in RBML format.
+
 **22. Help:** Print a description of the supported commands to the console.
 
 *Restrictions on command use: All commands that take in a recipe, ingredient or equipment name from user input will not work with other commands if used in the same line. For example, trying to add and delete a recipe by using 4 recipe name 5 another recipe will result in an error. Use such commands one at a time.*
