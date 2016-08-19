@@ -49,4 +49,4 @@ KNOWN BUGS:
 -----------
 * Non-numerical input for command will terminate the program
 * Some commands won't allow multiple commands to be run on the same line (noted in User Documentation.)
-* Unit conversion may have problems in some cases
+* Unit conversion may have some problems
